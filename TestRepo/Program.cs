@@ -9,6 +9,8 @@ namespace TestRepo
             Console.WriteLine("Hello World!");
 
             Console.WriteLine("coś tam");
+
+            Console.WriteLine("coś tam");
         }
     }
 }

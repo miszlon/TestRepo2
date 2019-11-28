@@ -19,6 +19,7 @@ namespace Zadanka_w_domu_2
         {
             double y = ((x - 50) / (150 - 50));
             return y;
+
         }
 
         //Zadanie 1C - Napisz funkcję, która oblicza pole trapezu. Wzór: ((a+b)/2) * h
@@ -43,20 +44,20 @@ namespace Zadanka_w_domu_2
         }
 
         //Zadanie 2A - W podanej tablicy znajdują się zyski ze sprzedaży danego dnia. Utwórz tablicę która będzie zawierać sumę zysków danego dnia od początku miesiąca.
-        public double ZyskiOdPoczatkuMiesiaca(double[] zyski_z_dnia)
+        public static double Zadanie2A(double[] zyski_z_dnia)
         {
             double zysk = 0;
             double zmienna = 0;
             for (int i = 0; i < zyski_z_dnia.Length; i++)
             {
                 zyski_z_dnia[i] = zmienna;
-                zysk = zysk + zmienna;
+                zysk += zmienna;
             }
             return zysk;
         }
 
         //Zadanie 2B - W podanej tablicy znajdują się wyniki obliczeń. Sprawdź i wypisz na konsoli czy liczby spełniają warunek (liczba % (indeks+1) == 0)
-        public bool SprawdzanieWarunku(double[] wyniki, int ktoraLiczba)
+        public static bool Zadanie2B(double[] wyniki, int ktoraLiczba)
         {
             double dzialanie = (wyniki[ktoraLiczba] % wyniki[ktoraLiczba + 1]);
             if (dzialanie == 0)
@@ -66,29 +67,25 @@ namespace Zadanka_w_domu_2
 
         //Zadanie 2C - Wypisz podany tekst od tyłu
 
-        public void ZwrocTekstOdTylu(string[] tekst)
+        public static void Zadanie2C(string tekst)
         {
-            string[] zmienionyTekst = { };
-            for (int i = 0; i<=tekst.Length; i++)
+            char[] tekstPrzychodzacy = tekst.ToCharArray();
+            for (int i = tekstPrzychodzacy.Length; i >= 1; --i)
             {
-                int znakWTekscie = tekst.Length + 1;
-                zmienionyTekst[i] = tekst[znakWTekscie - 1];
-            }
 
-            for(int i = 0; i < zmienionyTekst.Length; i++)
-            {
-                Console.WriteLine(zmienionyTekst[i]);
+                Console.Write(tekstPrzychodzacy[i - 1]);
+
             }
         }
 
         //Zadanie 2D - Szyfr Cezara. Podany tekst przesuń o ilość znaków wybraną przez użytkownika. Wypisz szyfr na ekran. Pomiń zapętlenie (z -> a).
 
-        public void SzyfrCezara(string[] tekst, int przesuniecie)
+        public static void Zadanie2D(string tekst, int przesuniecie)
         {
-            for(int i = 0; i < tekst.Length; i++)
+            char[] tekstCezara = tekst.ToCharArray();
+            for (int i = 0; i < tekstCezara.Length; i++)
             {
-                tekst[i] += przesuniecie;
-                Console.WriteLine(tekst[i]);
+                Console.WriteLine(tekstCezara[i]+przesuniecie);
             }
         }
 

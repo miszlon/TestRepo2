@@ -106,6 +106,7 @@ namespace Zadanka_w_domu_2
                 case "3B":
                     //3B.W tablicy poszarpanej są zapisane identyfikatory pracowników.Każdy wiersz to jeden dział.Napisz funkcję, która wypisze ilu pracowników ma który dział.
                     // Wypisz, który dział ma najwięcej pracowników.Wypisz, w którym dziale pracuje najnowszy pracownik(najwyższe id).
+                    Zadania.Zadanie3B();
                     break;
 
                 case "3C":
@@ -116,6 +117,7 @@ namespace Zadanka_w_domu_2
 
                 case "3D":
                     //3D.Napisz funkcję która przeszuka tablicę poszarpaną i wypisze rząd i kolumnę wartości przyjętej w parametrze.
+                    Zadania.Zadanie3D();
                     break;
     
             }

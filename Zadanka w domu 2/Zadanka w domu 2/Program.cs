@@ -58,7 +58,11 @@ namespace Zadanka_w_domu_2
                 case "1D":
                     //1D.Napisz funkcję, która sprawdzi, czy podany punkt należy do wykresu funkcji o wzorze: y = 0.5 * x ^ 2 - 10 * x + 1
                     Console.WriteLine("Zadanie 1D - Napisz funkcję, która sprawdzi, czy podany punkt należy do wykresu funkcji o wzorze: y=0.5*x^2-10*x+1");
-                    Console.WriteLine("Podaj liczbę ");
+                    Console.WriteLine("Podaj wartość x dla punktu ");
+                    double wartoscX = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Podaj wartość y dla punktu ");
+                    double wartoscY = double.Parse(Cosnole.ReadLine());
+                    Zadania.Zadanie1D(wartoscX,wartoscY);
                     break;
 
                 case "2A":

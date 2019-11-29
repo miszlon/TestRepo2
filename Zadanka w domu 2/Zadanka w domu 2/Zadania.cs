@@ -30,7 +30,7 @@ namespace Zadanka_w_domu_2
         }
         //Zadanie 1D - Napisz funkcję, która sprawdzi, czy podany punkt należy do wykresu funkcji o wzorze: y=0.5*x^2-10*x+1
 
-        public static bool Zadnaie1D(double x, double y)
+        public static bool Zadanie1D(double x, double y)
         {
 
             Console.WriteLine("Sprawdzamy czy punk A(" + x + "," + y + ") należy do wykresu");
@@ -100,6 +100,27 @@ namespace Zadanka_w_domu_2
         }
 
         //Zadanie 3A - Stwórz funkcję, która zwróci głeboką kopię dwuwymiarowej tablicy poszarpanej jako dwuwymiarową tablicę prostokątną. Tablica poszarpana nie musi być prostokątna.
+        public static void Zadanie3A()
+        {
+            int[][] poszarpanaTablica3A =
+            {
+                new[] {1,34,5,32 },
+                new[] {1,345,5,774,2,45,6,3,3,4 },
+                new[] {4,23,45,6,78,5,4,3,3,6,3,3,5,5,43,3,34,4,5543,56435654,6 }
+            };
+
+            int[,] prostokatnaTablica3A;
+
+            for(int i = 0; i < poszarpanaTablica3A.Length;i++)
+            {
+                for(int j = 0; j < poszarpanaTablica3A[i].Length; j++)
+                {
+
+                }
+            }
+
+        }
+
 
         //Zadanie 3B - W tablicy poszarpanej są zapisane identyfikatory pracowników. Każdy wiersz to jeden dział. Napisz funkcję, która wypisze ilu pracowników ma który dział.
         //             Wypisz, który dział ma najwięcej pracowników. Wypisz, w którym dziale pracuje najnowszy pracownik (najwyższe id).
@@ -152,7 +173,7 @@ namespace Zadanka_w_domu_2
         public static void Zadanie3C()
         {
             int[,] iloscPamieci = { { 2, 3, 5, 0 }, { 2, 4, 0, 0 } };
-          
+
             int[][] poszarpanaIloscPamieci = new int[iloscPamieci.Length][];
 
             //wyświetlanie tablicy dwuwymiarowej

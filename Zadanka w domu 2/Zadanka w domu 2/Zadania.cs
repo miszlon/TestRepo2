@@ -47,21 +47,31 @@ namespace Zadanka_w_domu_2
         public static double Zadanie2A(double[] zyski_z_dnia)
         {
             double zysk = 0;
-            double zmienna = 0;
+            double zmienna;
             for (int i = 0; i < zyski_z_dnia.Length; i++)
             {
-                zyski_z_dnia[i] = zmienna;
+                zmienna = zyski_z_dnia[i];
                 zysk += zmienna;
             }
             return zysk;
         }
 
         //Zadanie 2B - W podanej tablicy znajdują się wyniki obliczeń. Sprawdź i wypisz na konsoli czy liczby spełniają warunek (liczba % (indeks+1) == 0)
-        public static bool Zadanie2B(double[] wyniki, int ktoraLiczba)
+        public static bool Zadanie2B(double[] wyniki)
         {
-            double dzialanie = (wyniki[ktoraLiczba] % wyniki[ktoraLiczba + 1]);
-            if (dzialanie == 0)
+            int zmienna = 0;
+            for (int i = 0; i < wyniki.Length - 1; i++)
+            {
+                if (wyniki[i] % wyniki[i + 1] == 0)
+                {
+                    zmienna = 1;
+                }
+                else zmienna = 0;
+            }
+            if (zmienna == 1)
+            {
                 return true;
+            }
             else return false;
         }
 
@@ -70,7 +80,7 @@ namespace Zadanka_w_domu_2
         public static void Zadanie2C(string tekst)
         {
             char[] tekstPrzychodzacy = tekst.ToCharArray();
-            for (int i = tekstPrzychodzacy.Length; i >= 1; --i)
+            for (int i = tekstPrzychodzacy.Length; i > 0; i--)
             {
 
                 Console.Write(tekstPrzychodzacy[i - 1]);
@@ -141,13 +151,40 @@ namespace Zadanka_w_domu_2
 
         public static void Zadanie3C()
         {
+            int[,] iloscPamieci = { { 2, 3, 5, 0 }, { 2, 4, 0, 0 } };
+          
+            int[][] poszarpanaIloscPamieci = new int[iloscPamieci.Length][];
+
+            //wyświetlanie tablicy dwuwymiarowej
+            for (int i = 0; i < iloscPamieci.GetLength(0); i++)
+            {
+                for (int y = 0; y < iloscPamieci.GetLength(1); y++)
+                {
+                    if (y == iloscPamieci.GetLength(1) - 1)
+                    {
+                        Console.WriteLine(iloscPamieci[i, y]);
+                    }
+                    else Console.Write(iloscPamieci[i, y]);
+                }
+            }
+
+            //usuwanie zer na końcu
+            for (int i = 0; i < iloscPamieci.GetLength(0); i++)
+            {
+                for (int y = 0; y < iloscPamieci.GetLength(1); y++)
+                {
+                    if (iloscPamieci[i, y] != 0)
+                    {
+                        poszarpanaIloscPamieci[i][y] = iloscPamieci[i, y];
+                    }
+                }
+            }
 
         }
 
         //Zadanie 3D - Napisz funkcję która przeszuka tablicę poszarpaną i wypisze rząd i kolumnę wartości przyjętej w parametrze.
-        public static void Zadanie3D()
+        public static void Zadanie3D(int parametr)
         {
-            int parametr = 3;
             int[][] tablicaPoszarpana3D =
             {
                 new[] { 3, 56, 34 },
@@ -155,11 +192,11 @@ namespace Zadanka_w_domu_2
                 new[] { 5333, 12222, 34444, 56666, 78888 }
             };
 
-            for(int i = 0; i < tablicaPoszarpana3D.Length; i++)
+            for (int i = 0; i < tablicaPoszarpana3D.Length; i++)
             {
-                for(int y = 0; y < tablicaPoszarpana3D[i].Length; y++)
+                for (int y = 0; y < tablicaPoszarpana3D[i].Length; y++)
                 {
-                    if(parametr == tablicaPoszarpana3D[i][y])
+                    if (parametr == tablicaPoszarpana3D[i][y])
                     {
                         Console.WriteLine("Parametr znaleziony! Rząd {0}, wierz {1}", i + 1, y + 1);
                     }

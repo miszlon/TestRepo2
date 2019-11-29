@@ -71,14 +71,12 @@ namespace Zadanka_w_domu_2
                 case "2B":
                     //2B.W podanej tablicy znajdują się wyniki obliczeń.Sprawdź i wypisz na konsoli czy liczby spełniają warunek(liczba % (indeks + 1) == 0)
                     Console.WriteLine("Zadanie 2B - W podanej tablicy znajdują się wyniki obliczeń. Sprawdź i wypisz na konsoli czy liczby spełniają warunek (liczba % (indeks+1) == 0)");
-                    double[] wyniki = { 14, 20, 45, 60 };
-                    Console.WriteLine("Podaj numer indeksu:");
-                    int ktoraLiczba = int.Parse(Console.ReadLine());
-                    if (Zadania.Zadanie2B(wyniki, ktoraLiczba) == true)
+                    double[] wyniki = { 8,4 , 2, 1 };
+                    if (Zadania.Zadanie2B(wyniki) == true)
                     {
                         Console.WriteLine("Warunek spełniony");
                     }
-                    else Console.WriteLine("Warunek nie spełniony");
+                    else Console.WriteLine("Warunek niespełniony"); ;
                     break;
 
                 case "2C":
@@ -113,11 +111,14 @@ namespace Zadanka_w_domu_2
                     //3C.Tworzysz aplikację, która ma działać w systemie o krytycznie niskiej ilości pamięci RAM. Aplikacja otrzymuje dane w postaci dwuwymiarowej tablicy prostokątnej,
                     //mimo że większość rzędów jest zakończona szeregiem bezużytecznych wartości(zer). Aby zaoszczędzić pamięć, 
                     //napisz funkcję która przetworzy tablicę prostokątną na tablicę poszarpaną.
+                    Zadania.Zadanie3C();
                     break;
 
                 case "3D":
                     //3D.Napisz funkcję która przeszuka tablicę poszarpaną i wypisze rząd i kolumnę wartości przyjętej w parametrze.
-                    Zadania.Zadanie3D();
+                    Console.Write("Podaj numer parametru: ");
+                    int parametr = int.Parse(Console.ReadLine());
+                    Zadania.Zadanie3D(parametr);
                     break;
     
             }

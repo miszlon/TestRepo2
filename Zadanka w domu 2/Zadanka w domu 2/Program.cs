@@ -61,7 +61,7 @@ namespace Zadanka_w_domu_2
                     Console.WriteLine("Podaj wartość x dla punktu ");
                     double wartoscX = double.Parse(Console.ReadLine());
                     Console.WriteLine("Podaj wartość y dla punktu ");
-                    double wartoscY = double.Parse(Cosnole.ReadLine());
+                    double wartoscY = double.Parse(Console.ReadLine());
                     Zadania.Zadanie1D(wartoscX,wartoscY);
                     break;
 

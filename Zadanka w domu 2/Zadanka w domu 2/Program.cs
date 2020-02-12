@@ -103,6 +103,7 @@ namespace Zadanka_w_domu_2
 
                 case "3A":
                     //3A.Stwórz funkcję, która zwróci głeboką kopię dwuwymiarowej tablicy poszarpanej jako dwuwymiarową tablicę prostokątną. Tablica poszarpana nie musi być prostokątna.
+                    Zadania.Zadanie3A();
                     break;
 
                 case "3B":

@@ -19,7 +19,6 @@ namespace Zadanka_w_domu_2
         {
             double y = ((x - 50) / (150 - 50));
             return y;
-
         }
 
         //Zadanie 1C - Napisz funkcję, która oblicza pole trapezu. Wzór: ((a+b)/2) * h
@@ -102,22 +101,36 @@ namespace Zadanka_w_domu_2
         //Zadanie 3A - Stwórz funkcję, która zwróci głeboką kopię dwuwymiarowej tablicy poszarpanej jako dwuwymiarową tablicę prostokątną. Tablica poszarpana nie musi być prostokątna.
         public static void Zadanie3A()
         {
+            int iloscWartosci = 0;
+            int wiersz = 0;
             int[][] poszarpanaTablica3A =
             {
                 new[] {1,34,5,32 },
-                new[] {1,345,5,774,2,45,6,3,3,4 },
-                new[] {4,23,45,6,78,5,4,3,3,6,3,3,5,5,43,3,34,4,5543,56435654,6 }
+                new[] {1,345,5,774,2,45,6,3,3,4 }
+                //new[] {4,23,45,6,78,5,4,3,3,6,3,3,5,5,43,3,34,4,5543,56435654,6 }
             };
 
-            int[,] prostokatnaTablica3A;
-
-            for(int i = 0; i < poszarpanaTablica3A.Length;i++)
+            for (int i = 0; i < poszarpanaTablica3A.Length; i++)
             {
-                for(int j = 0; j < poszarpanaTablica3A[i].Length; j++)
+                if (iloscWartosci < poszarpanaTablica3A[i].Length)
                 {
-
+                    iloscWartosci = poszarpanaTablica3A[i].Length;
+                    wiersz = i;
                 }
             }
+            Console.WriteLine("Najwięcej wartości ma wiersz {0}. Ilość wartosci {1}", wiersz + 1, iloscWartosci);
+
+            int[,] prostokatnaTablica3A = new int[poszarpanaTablica3A.Length, iloscWartosci];
+
+            Console.WriteLine(poszarpanaTablica3A[1][5]); // to zwraca błąd, że jest poza zakresem (to prawda, ale jak to obsłużyć, żeby zamiast błędu, wpisało wartość "0" w tablicy prostokątnej?)
+
+            //for (int i = 0; i < poszarpanaTablica3A.Length; i++)
+            //{
+            //    for (int j = 0; j < iloscWartosci; j++)
+            //    {
+            //        poszarpanaTablica3A[i][j];
+            //    }
+            //}
 
         }
 
@@ -172,35 +185,19 @@ namespace Zadanka_w_domu_2
 
         public static void Zadanie3C()
         {
+            int licznik0 = 0;
+            int licznik1 = 0;
             int[,] iloscPamieci = { { 2, 3, 5, 0 }, { 2, 4, 0, 0 } };
-
-            int[][] poszarpanaIloscPamieci = new int[iloscPamieci.Length][];
-
-            //wyświetlanie tablicy dwuwymiarowej
-            for (int i = 0; i < iloscPamieci.GetLength(0); i++)
+            
+            for(int i = 0; i < iloscPamieci.GetLength(0); i++)
             {
-                for (int y = 0; y < iloscPamieci.GetLength(1); y++)
+                for(int j = 0; j < iloscPamieci.GetLength(1); j++)
                 {
-                    if (y == iloscPamieci.GetLength(1) - 1)
-                    {
-                        Console.WriteLine(iloscPamieci[i, y]);
-                    }
-                    else Console.Write(iloscPamieci[i, y]);
+                   
                 }
             }
-
-            //usuwanie zer na końcu
-            for (int i = 0; i < iloscPamieci.GetLength(0); i++)
-            {
-                for (int y = 0; y < iloscPamieci.GetLength(1); y++)
-                {
-                    if (iloscPamieci[i, y] != 0)
-                    {
-                        poszarpanaIloscPamieci[i][y] = iloscPamieci[i, y];
-                    }
-                }
-            }
-
+            Console.WriteLine(licznik0);
+            Console.WriteLine(licznik1);
         }
 
         //Zadanie 3D - Napisz funkcję która przeszuka tablicę poszarpaną i wypisze rząd i kolumnę wartości przyjętej w parametrze.
